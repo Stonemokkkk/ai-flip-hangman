@@ -245,12 +245,14 @@ function revealLetters(letter) {
 // Body Part Reveal
 // ===========================
 function revealBodyPart() {
-    const parts = ["head", "body", "leftArm", "rightArm", "leftLeg", "rightLeg"];
-    const partId = parts[gameState.mistakeCount - 1];
+    const svgParts = ["svgHead", "svgBody", "svgLeftArm", "svgRightArm", "svgLeftLeg", "svgRightLeg"];
+    const partId = svgParts[gameState.mistakeCount - 1];
     if (partId) {
         const part = document.getElementById(partId);
         part.classList.add("visible");
     }
+    // Update mistakes counter
+    document.getElementById("mistakesCounter").textContent = `MISTAKES: ${gameState.mistakeCount} / ${MAX_MISTAKES}`;
 }
 
 // ===========================
@@ -382,10 +384,11 @@ function resetLetterTiles() {
 }
 
 function resetCharacterBoard() {
-    const parts = document.querySelectorAll(".body-part");
+    const parts = document.querySelectorAll(".hangman-part");
     parts.forEach(part => {
         part.classList.remove("visible");
     });
+    document.getElementById("mistakesCounter").textContent = `MISTAKES: 0 / ${MAX_MISTAKES}`;
 }
 
 function setMessage(text) {

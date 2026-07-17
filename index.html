@@ -48,42 +48,33 @@
                 </div>
             </div>
 
-            <!-- Right: Character Reveal Board -->
+            <!-- Character Reveal Board -->
             <div class="right-panel">
                 <div class="character-board">
                     <div class="board-title">WHO AM I?</div>
                     <div class="character-area" id="characterArea">
-                        <!-- Head -->
-                        <div class="body-part" id="head" data-part="0">
-                            <div class="flip-tile">?</div>
-                            <div class="part-shape head-shape"></div>
-                        </div>
-                        <!-- Body -->
-                        <div class="body-part" id="body" data-part="1">
-                            <div class="flip-tile">?</div>
-                            <div class="part-shape body-shape"></div>
-                        </div>
-                        <!-- Left Arm -->
-                        <div class="body-part" id="leftArm" data-part="2">
-                            <div class="flip-tile">?</div>
-                            <div class="part-shape arm-left-shape"></div>
-                        </div>
-                        <!-- Right Arm -->
-                        <div class="body-part" id="rightArm" data-part="3">
-                            <div class="flip-tile">?</div>
-                            <div class="part-shape arm-right-shape"></div>
-                        </div>
-                        <!-- Left Leg -->
-                        <div class="body-part" id="leftLeg" data-part="4">
-                            <div class="flip-tile">?</div>
-                            <div class="part-shape leg-left-shape"></div>
-                        </div>
-                        <!-- Right Leg -->
-                        <div class="body-part" id="rightLeg" data-part="5">
-                            <div class="flip-tile">?</div>
-                            <div class="part-shape leg-right-shape"></div>
-                        </div>
+                        <!-- SVG Stick Figure - all parts hidden by default -->
+                        <svg viewBox="0 0 120 160" class="hangman-svg" id="hangmanSvg">
+                            <!-- Platform -->
+                            <line x1="10" y1="150" x2="110" y2="150" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="30" y1="150" x2="30" y2="20" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="30" y1="20" x2="70" y2="20" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="70" y1="20" x2="70" y2="35" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+                            <!-- Head -->
+                            <circle cx="70" cy="50" r="15" fill="none" stroke="#111" stroke-width="3" id="svgHead" class="hangman-part"/>
+                            <!-- Body -->
+                            <line x1="70" y1="65" x2="70" y2="105" stroke="#111" stroke-width="3" stroke-linecap="round" id="svgBody" class="hangman-part"/>
+                            <!-- Left Arm -->
+                            <line x1="70" y1="75" x2="50" y2="95" stroke="#111" stroke-width="3" stroke-linecap="round" id="svgLeftArm" class="hangman-part"/>
+                            <!-- Right Arm -->
+                            <line x1="70" y1="75" x2="90" y2="95" stroke="#111" stroke-width="3" stroke-linecap="round" id="svgRightArm" class="hangman-part"/>
+                            <!-- Left Leg -->
+                            <line x1="70" y1="105" x2="50" y2="135" stroke="#111" stroke-width="3" stroke-linecap="round" id="svgLeftLeg" class="hangman-part"/>
+                            <!-- Right Leg -->
+                            <line x1="70" y1="105" x2="90" y2="135" stroke="#111" stroke-width="3" stroke-linecap="round" id="svgRightLeg" class="hangman-part"/>
+                        </svg>
                     </div>
+                    <div class="mistakes-counter" id="mistakesCounter">MISTAKES: 0 / 6</div>
                 </div>
             </div>
         </div>
