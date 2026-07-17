@@ -271,7 +271,8 @@ body {
 
 /* Right Panel - Character Board */
 .right-panel {
-    display: none;
+    display: block;
+    width: 100%;
 }
 
 .character-board {
@@ -617,7 +618,6 @@ body {
     }
 
     .right-panel {
-        display: block;
         flex: 1;
     }
 
